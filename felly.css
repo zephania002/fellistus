@@ -1,0 +1,166 @@
+:root {
+    --primary-pink: #ff4d6d;
+    --soft-pink: #ff85a1;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    z-index: 10;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.romantic-text {
+    font-family: 'Dancing Script', cursive;
+    color: #c9184a;
+    font-size: 2.5rem;
+}
+
+.message {
+    color: #590d22;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.question {
+    color: #ff4d6d;
+    margin-bottom: 30px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.yes {
+    background: var(--primary-pink);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+}
+
+.yes:hover {
+    transform: scale(1.1);
+    background: #ff758f;
+}
+
+.no {
+    background: #ffffff;
+    color: #ff4d6d;
+    position: relative;
+}
+
+/* Success Screen Styles */
+.hidden { display: none; }
+
+#celebration {
+    text-align: center;
+    z-index: 20;
+    animation: scaleUp 0.5s forwards;
+}
+
+.final-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #ff4d6d;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Floating Hearts background */
+.heart-float {
+    position: absolute;
+    bottom: -100px;
+    color: rgba(255, 77, 109, 0.3);
+    animation: floatUp 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    to { transform: translateY(-120vh) rotate(360deg); }
+}
+
+/* ... (Keep previous CSS and add/update these parts) ... */
+
+.photo-frame {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 4px solid white;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.time-box span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c9184a;
+}
+
+.time-box small {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #590d22;
+}
+
+/* Animations for buttons */
+.btn:active { transform: scale(0.95); }
